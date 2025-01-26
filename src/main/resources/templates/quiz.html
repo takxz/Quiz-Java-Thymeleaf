@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="fr"
+      xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Quiz</title>
+    <link rel="stylesheet" th:href="@{/style.css}">
+</head>
+<body>
+<div class="quiz-container">
+    <h1>Question</h1>
+    <h2 class="question" th:text="${question.question}"></h2>
+    <form th:action="@{/submit}" method="POST">
+        <ul>
+            <li th:each="reponse, iterStat : ${question.reponses}">
+                <input type="radio" th:value="${iterStat.index}" name="choice" required/>
+                <label th:text="${reponse}"></label>
+            </li>
+        </ul>
+        <button type="submit">Valider</button>
+    </form>
+    <p>Votre score actuel est de : <span class="score" th:text="${score}"></span></p>
+</div>
+</body>
+</html>

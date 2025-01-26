@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html lang="fr"
+      xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Resultat</title>
+    <link rel="stylesheet" th:href=@{/style.css}>
+</head>
+<body>
+<div class="result-container">
+    <h1>Les résultats</h1>
+    <p th:text="${message}"></p>
+    <a href="/">Recommencer le quiz</a>
+</div>
+</body>
+</html>
